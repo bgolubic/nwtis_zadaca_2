@@ -1,0 +1,9 @@
+#NWTiS bgolubic 2023.
+#Thu Mar 23 14:51:16 CET 2023
+adresa.wa_1=http://200.20.0.4:8080/bgolubic_zadaca_2_wa_1/api
+stranica.brojRedova=15
+autor.ime=Bruno
+autor.prezime=Golubić
+autor.predmet=NWTiS
+aplikacija.godina=2023.
+aplikacija.verzija=1.0.0

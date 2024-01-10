@@ -1,0 +1,24 @@
+cd /opt/payara-web-6.2023.1/glassfish/bin
+sudo ./startserv
+
+cd /opt/apache-tomcat-10.1.5/bin/
+./startup.sh
+
+cd /opt/hsqldb-2.7.1/hsqldb/data
+sudo java -classpath ../lib/hsqldb.jar org.hsqldb.server.Server --database.0 file:nwtis_2 --dbname.0 nwtis_2 --port 9001
+
+export JAVA_HOME=/usr/lib/jvm/jdk-17.0.2
+export PATH=/usr/lib/jvm/jdk-17.0.2/bin:$PATH
+sudo chmod -R g+w /opt/payara-web-6.2023.1/glassfish/domains/domain1/applications/
+sudo chmod -R g+w /opt/payara-web-6.2023.1/glassfish/domains/domain1/generated/
+cd /opt/payara-web-6.2023.1/glassfish/bin
+./asadmin start-domain
+./asadmin stop-domain domain1
+./asadmin stop-all-domains
+
+#CURL
+curl -X OPTIONS -H "Accept: application/vnd.sun.wadl+xml" "http://localhost:8080/bgolubic_zadaca_2_wa_1/api/aerodromi"
+
+curl -X GET -H "Accept: application/json" "http://localhost:8080/bgolubic_zadaca_2_wa_1/api/aerodromi"
+curl -X GET -H "Accept: application/json" "http://localhost:8080/bgolubic_zadaca_2_wa_1/api/aerodromi/LDZA"
+curl -X GET -H "Accept: application/json" "http://localhost:8080/bgolubic_zadaca_2_wa_1/api/aerodromi/LDZA/LOWW"

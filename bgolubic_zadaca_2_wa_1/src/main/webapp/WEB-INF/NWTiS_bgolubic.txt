@@ -1,0 +1,4 @@
+#NWTiS bgolubic 2023.
+#Thu Mar 23 14:51:16 CET 2023
+OpenSkyNetwork.korisnik=
+OpenSkyNetwork.lozinka=
